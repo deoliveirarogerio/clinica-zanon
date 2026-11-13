@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZANON Clínica · Estética Avançada</title>
+<meta name="description" content="ZANON Clínica – Estética Avançada. Harmonização facial e corporal, tricologia e emagrecimento com ciência, tecnologia e resultados. Agende sua avaliação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#141211; --bg2:#1c1917; --card:#221e1b; --line:#3a322c;
+  --gold:#c8a27a; --gold2:#e3c7a6; --text:#efe8e1; --muted:#a99c90;
+  --cream:#f6f0ea; --ink:#2a221d;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15}
+h2{font-size:clamp(2rem,4vw,3rem);margin:.4rem 0 1rem}
+.lead{color:var(--muted);max-width:620px}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.8rem;border-radius:40px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:.3s}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,162,122,.25)}
+.btn-line{border:1px solid var(--gold);color:var(--gold2)}
+.btn-line:hover{background:rgba(200,162,122,.1)}
+section{padding:110px 0}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:.3s}
+header.scrolled{background:rgba(20,18,17,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center;gap:.8rem}
+.logo-mark{width:42px;height:42px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);font-size:1.5rem;color:var(--gold2)}
+.logo-txt b{display:block;font-family:var(--serif);font-weight:500;letter-spacing:.35em;font-size:1.25rem}
+.logo-txt small{font-size:.58rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+.menu{display:flex;gap:2rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.menu a:hover{color:var(--gold2)}
+.burger{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:78px;
+  background:radial-gradient(900px 600px at 80% 30%,rgba(200,162,122,.16),transparent 60%),radial-gradient(700px 500px at 10% 90%,rgba(120,85,60,.18),transparent 60%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin:1rem 0 1.4rem}
+.hero h1 em{color:var(--gold2);font-style:italic}
+.pillars{display:flex;gap:1rem;flex-wrap:wrap;margin:1.6rem 0 2.4rem;font-size:.72rem;letter-spacing:.28em;color:var(--gold)}
+.pillars span:not(:last-child)::after{content:"•";margin-left:1rem;color:var(--line)}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-visual{aspect-ratio:4/5;border-radius:220px 220px 16px 16px;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#3b2f27,#1d1916 60%);border:1px solid var(--line)}
+.hero-visual::before{content:"Z";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:16rem;color:rgba(227,199,166,.08)}
+.photo-note{position:absolute;bottom:18px;left:18px;right:18px;font-size:.68rem;color:var(--muted);text-align:center;border:1px dashed var(--line);padding:.6rem;border-radius:10px;background:rgba(0,0,0,.25)}
+.badge{position:absolute;top:60px;right:18px;background:var(--cream);color:var(--ink);padding:1rem 1.3rem;border-radius:12px;font-size:.75rem;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.badge b{display:block;font-family:var(--serif);font-size:1.5rem}
+
+/* sobre */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-img{aspect-ratio:1;border-radius:16px;background:linear-gradient(145deg,#2c2520,#191614);border:1px solid var(--line);position:relative}
+.about-img .photo-note{bottom:24px}
+.sig{font-family:var(--serif);font-style:italic;font-size:1.8rem;color:var(--gold2);margin-top:1.5rem}
+.reg{font-size:.75rem;color:var(--muted);letter-spacing:.08em}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.value{border-top:1px solid var(--gold);padding-top:1rem}
+.value h4{font-family:var(--serif);font-size:1.3rem;font-weight:500}
+.value p{font-size:.85rem;color:var(--muted)}
+
+/* tratamentos */
+.tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin:2rem 0 2.5rem}
+.tab{background:none;border:1px solid var(--line);color:var(--muted);padding:.6rem 1.3rem;border-radius:30px;font:500 .75rem var(--sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.25s}
+.tab.active,.tab:hover{border-color:var(--gold);color:var(--gold2);background:rgba(200,162,122,.08)}
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2rem 1.7rem;transition:.3s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.card .ico{width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);margin-bottom:1.2rem}
+.card h3{font-size:1.45rem;margin-bottom:.5rem}
+.card p{font-size:.88rem;color:var(--muted);flex:1}
+.card .tag{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.card a{margin-top:1.2rem;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.card.hide{display:none}
+
+/* jornada */
+.journey{background:var(--cream);color:var(--ink)}
+.journey .lead{color:#6f6157}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;counter-reset:s}
+.step{position:relative;padding-top:3.5rem}
+.step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:0;font-family:var(--serif);font-size:2.6rem;color:var(--gold)}
+.step h4{font-family:var(--serif);font-size:1.35rem;font-weight:500;margin-bottom:.3rem}
+.step p{font-size:.88rem;color:#6f6157}
+
+/* destaque */
+.promo{background:linear-gradient(120deg,#2a211b,#1a1614);border-block:1px solid var(--line);padding:80px 0}
+.promo-in{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.promo h2{margin:.3rem 0}
+
+/* depoimentos */
+.reviews-box{border:1px dashed var(--line);border-radius:16px;padding:3rem;text-align:center;margin-top:2rem;color:var(--muted)}
+.stars{color:var(--gold2);letter-spacing:.3em;font-size:1.2rem;margin-bottom:1rem}
+
+/* faq */
+.faq{background:var(--bg2)}
+.faq-list{max-width:820px;margin-top:2.5rem}
+details{border-bottom:1px solid var(--line);padding:1.3rem 0}
+summary{cursor:pointer;font-family:var(--serif);font-size:1.35rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";color:var(--gold)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:.8rem;font-size:.92rem}
+
+/* contato */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:2.5rem}
+.info li{list-style:none;display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.info li span:first-child{color:var(--gold);min-width:110px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;padding-top:.2rem}
+form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2rem;display:grid;gap:1rem}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:.9rem 1rem;border-radius:10px;font:300 .9rem var(--sans)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+.consent{font-size:.72rem;color:var(--muted);display:flex;gap:.6rem;align-items:flex-start}
+.consent input{width:auto;margin-top:.25rem}
+.map{margin-top:1.5rem;aspect-ratio:16/9;border-radius:16px;border:1px dashed var(--line);display:grid;place-items:center;color:var(--muted);font-size:.8rem;text-align:center;padding:1rem}
+
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:.78rem;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.disclaimer{margin-top:1rem;font-size:.7rem;opacity:.75}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:.3s}
+.wa:hover{transform:scale(1.08)}
+
+.demo-bar{background:var(--gold);color:var(--ink);text-align:center;font-size:.72rem;padding:.45rem 16px;font-weight:500;letter-spacing:.05em}
+
+.reveal{opacity:0;transform:translateY(24px);transition:.8s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-visual{max-width:380px;margin-inline:auto;width:100%}
+  .badge{right:0}
+  .steps{grid-template-columns:1fr 1fr}
+  .values{grid-template-columns:1fr}
+  section{padding:80px 0}
+  .menu{position:fixed;top:78px;left:0;right:0;flex-direction:column;background:var(--bg);padding:1.5rem 16px;gap:1.2rem;border-bottom:1px solid var(--line);display:none}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .nav .btn{display:none}
+}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.reviews-box{padding:2rem 1rem}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="demo-bar">Prévia de demonstração criada por RogerWeb · conteúdos e fotos serão validados com a clínica</div>
+  <div class="wrap nav">
+    <a href="#inicio" class="logo">
+      <div class="logo-mark">Z</div>
+      <div class="logo-txt"><b>ZANON</b><small>Clínica · Estética Avançada</small></div>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#sobre">A Clínica</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#avaliacao">Avaliação</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#contato" class="btn btn-gold">Agendar</a>
+    <button class="burger" id="burger" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Estética Avançada</span>
+      <h1>Beleza natural, <em>planejada</em> com ciência.</h1>
+      <p class="lead">Harmonização facial e corporal, tricologia e emagrecimento com protocolos individualizados, tecnologia de ponta e um olhar cuidadoso para cada detalhe.</p>
+      <div class="pillars"><span>CIÊNCIA</span><span>TECNOLOGIA</span><span>RESULTADOS</span></div>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agende sua avaliação</a>
+        <a class="btn btn-line" href="#tratamentos">Conheça os tratamentos</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="badge"><b>Avaliação</b>personalizada</div>
+      <div class="photo-note">[ Foto da Dra. Camila Zanon ou do ambiente da clínica ]</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-img reveal"><div class="photo-note">[ Retrato profissional da Dra. Camila ]</div></div>
+    <div class="reveal">
+      <span class="eyebrow">A Clínica</span>
+      <h2>Cuidado individualizado em cada planejamento</h2>
+      <p class="lead">Na ZANON Clínica, cada paciente é único. Antes de qualquer procedimento, realizamos uma avaliação completa para entender suas necessidades, seus objetivos e suas características, e assim indicar o tratamento mais adequado, com resultados elegantes e que respeitam a sua beleza natural.</p>
+      <p class="sig">Dra. Camila Zanon</p>
+      <p class="reg">Responsável técnica · [Registro profissional]</p>
+      <div class="values">
+        <div class="value"><h4>Ciência</h4><p>Protocolos baseados em evidências e atualização constante.</p></div>
+        <div class="value"><h4>Tecnologia</h4><p>Equipamentos modernos para tratamentos faciais e corporais.</p></div>
+        <div class="value"><h4>Resultados</h4><p>Naturalidade e harmonia como prioridade.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamentos">
+  <div class="wrap">
+    <span class="eyebrow">Tratamentos</span>
+    <h2>O que podemos fazer por você</h2>
+    <p class="lead">Conheça os principais procedimentos. A indicação final sempre acontece após avaliação profissional.</p>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-f="all">Todos</button>
+      <button class="tab" data-f="facial">Facial / HOF</button>
+      <button class="tab" data-f="corporal">Corporal</button>
+      <button class="tab" data-f="pele">Pele</button>
+      <button class="tab" data-f="capilar">Capilar</button>
+    </div>
+    <div class="grid-cards" id="cards">
+      <article class="card" data-c="facial"><div class="ico">✦</div><span class="tag">Facial</span><h3>Toxina Botulínica</h3><p>Suaviza linhas de expressão da testa, glabela e região dos olhos, com aparência descansada e natural.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="facial"><div class="ico">✦</div><span class="tag">Facial</span><h3>Preenchimento Labial</h3><p>Mais do que volume: realce do contorno, hidratação e harmonia com o restante do rosto.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="facial"><div class="ico">✦</div><span class="tag">Facial</span><h3>Sulco Nasogeniano</h3><p>Preenchimento do “bigode chinês” para suavizar a região e trazer mais harmonia, respeitando os seus traços.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="facial"><div class="ico">✦</div><span class="tag">Facial</span><h3>Harmonização Facial</h3><p>Planejamento global do rosto, combinando técnicas para equilíbrio, proporção e rejuvenescimento.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="facial"><div class="ico">✦</div><span class="tag">Facial</span><h3>Criofrequência de Papada</h3><p>Auxilia na firmeza da pele e no estímulo de colágeno, valorizando o contorno facial.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="corporal"><div class="ico">◈</div><span class="tag">Corporal</span><h3>Enzimas para Gordura Localizada</h3><p>Aplicações em regiões específicas como parte de um plano de cuidados personalizado.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="corporal"><div class="ico">◈</div><span class="tag">Corporal</span><h3>Hidrolipoclasia + Ultracavitação</h3><p>Protocolo associado à criofrequência para tratamento de gordura localizada e contorno corporal.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="corporal"><div class="ico">◈</div><span class="tag">Corporal</span><h3>Emagrecimento</h3><p>Acompanhamento estratégico com protocolos combinados para resultados sustentáveis.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="pele"><div class="ico">❖</div><span class="tag">Pele</span><h3>Limpeza de Pele</h3><p>Remoção de impurezas, controle de oleosidade e preparo da pele para outros tratamentos.</p><a href="#contato">Quero avaliar →</a></article>
+      <article class="card" data-c="capilar"><div class="ico">❋</div><span class="tag">Tricologia</span><h3>Tratamentos Capilares</h3><p>Avaliação do couro cabeludo e protocolos para queda, afinamento e saúde dos fios.</p><a href="#contato">Quero avaliar →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="journey" id="avaliacao">
+  <div class="wrap">
+    <span class="eyebrow">Como funciona</span>
+    <h2>Sua jornada na ZANON</h2>
+    <p class="lead">Um processo transparente, do primeiro contato ao acompanhamento pós-procedimento.</p>
+    <div class="steps">
+      <div class="step"><h4>Contato</h4><p>Fale com a gente pelo WhatsApp ou formulário e escolha o melhor horário.</p></div>
+      <div class="step"><h4>Avaliação</h4><p>Conversa detalhada, análise das suas características e definição de objetivos.</p></div>
+      <div class="step"><h4>Planejamento</h4><p>Proposta de tratamento individualizada, com todas as orientações.</p></div>
+      <div class="step"><h4>Acompanhamento</h4><p>Retornos e cuidados pós-procedimento para garantir o melhor resultado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="promo">
+  <div class="wrap promo-in">
+    <div>
+      <span class="eyebrow">Projeto Verão 2027</span>
+      <h2>Agenda aberta para a nova estação</h2>
+      <p class="lead">Comece agora seu planejamento facial e corporal e chegue ao verão com mais confiança.</p>
+    </div>
+    <a class="btn btn-gold" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Quero%20saber%20sobre%20o%20Projeto%20Ver%C3%A3o." target="_blank" rel="noopener">Quero participar</a>
+  </div>
+</section>
+
+<section id="depoimentos">
+  <div class="wrap">
+    <span class="eyebrow">Avaliações</span>
+    <h2>Quem conhece, recomenda</h2>
+    <div class="reviews-box">
+      <div class="stars">★★★★★</div>
+      <p>Espaço reservado para as avaliações reais das pacientes no Google, exibidas automaticamente após a configuração do Perfil da Empresa no Google.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Dúvidas frequentes</span>
+    <h2>Perguntas que sempre recebemos</h2>
+    <div class="faq-list">
+      <details><summary>Preciso passar por avaliação antes do procedimento?</summary><p>Sim. A avaliação é essencial para entender seus objetivos, verificar indicações e contraindicações e montar um plano individualizado.</p></details>
+      <details><summary>Os resultados ficam naturais?</summary><p>Nosso foco é valorizar a sua beleza natural. Cada planejamento respeita seus traços e proporções.</p></details>
+      <details><summary>Quanto tempo dura o efeito da toxina botulínica?</summary><p>Em geral, de 4 a 6 meses, variando de pessoa para pessoa. Na avaliação, explicamos tudo sobre o seu caso.</p></details>
+      <details><summary>Quais são as formas de pagamento?</summary><p>[A confirmar com a clínica: cartão, Pix, parcelamento.]</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <span class="eyebrow">Contato</span>
+    <h2>Agende sua avaliação</h2>
+    <div class="contact-grid">
+      <div>
+        <ul class="info">
+          <li><span>WhatsApp</span><span>(XX) XXXXX-XXXX</span></li>
+          <li><span>Instagram</span><span><a href="https://www.instagram.com/zanonestetica/" target="_blank" rel="noopener">@zanonestetica</a></span></li>
+          <li><span>Endereço</span><span>[Rua, número · Bairro · Cidade/UF]</span></li>
+          <li><span>Horário</span><span>[Seg a Sex · 9h às 19h · Sáb · 9h às 13h]</span></li>
+        </ul>
+        <div class="map">[ Mapa do Google incorporado, vinculado ao Perfil da Empresa no Google ]</div>
+      </div>
+      <form id="form">
+        <input required name="nome" placeholder="Seu nome">
+        <input required name="tel" placeholder="WhatsApp com DDD" inputmode="tel">
+        <select name="interesse">
+          <option>Tenho interesse em…</option>
+          <option>Toxina Botulínica</option><option>Preenchimento</option><option>Harmonização Facial</option>
+          <option>Tratamento Corporal</option><option>Emagrecimento</option><option>Limpeza de Pele</option><option>Tratamento Capilar</option>
+        </select>
+        <textarea name="msg" rows="4" placeholder="Conte um pouco do que você procura (opcional)"></textarea>
+        <label class="consent"><input type="checkbox" required> Concordo com o uso dos meus dados para contato, conforme a LGPD.</label>
+        <button class="btn btn-gold" type="submit" style="border:0;cursor:pointer;justify-content:center">Enviar pelo WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span>© 2026 ZANON Clínica · Estética Avançada · Responsável técnica: Dra. Camila Zanon [Registro]</span>
+      <span>Desenvolvido por <b style="color:var(--gold2)">RogerWeb</b></span>
+    </div>
+    <p class="disclaimer">Os resultados podem variar de pessoa para pessoa. Todos os procedimentos são realizados mediante avaliação profissional prévia.</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+const WA='55XXXXXXXXXXX';
+const header=document.getElementById('top');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40));
+const menu=document.getElementById('menu');
+document.getElementById('burger').onclick=()=>menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
+
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  const f=t.dataset.f;
+  document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',f!=='all'&&c.dataset.c!==f));
+});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal, .card, .step, details').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+
+document.getElementById('form').onsubmit=e=>{
+  e.preventDefault();
+  const d=new FormData(e.target);
+  const txt=`Olá! Me chamo ${d.get('nome')}.\nInteresse: ${d.get('interesse')}\n${d.get('msg')||''}`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`,'_blank');
+};
+</script>
+</body>
+</html>
